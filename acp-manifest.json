@@ -1,0 +1,23 @@
+{
+  "name": "shopfleet-notifications",
+  "description": "Notification service (Python/FastAPI)",
+  "version": "1.0.0",
+  "role": "service",
+  "language": "python",
+  "build": {
+    "command": "pip install -e .",
+    "artifacts": []
+  },
+  "test": {
+    "command": "pytest"
+  },
+  "lint": {
+    "command": "ruff check ."
+  },
+  "dependencies": [
+    "shopfleet-shared",
+    "shopfleet-orders",
+    "shopfleet-payments"
+  ],
+  "dependents": []
+}
