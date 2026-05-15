@@ -12,6 +12,7 @@ class NotificationType(str, Enum):
     order_confirmed = "order_confirmed"
     order_shipped = "order_shipped"
     order_delivered = "order_delivered"
+    order_disputed = "order_disputed"
     payment_succeeded = "payment_succeeded"
     payment_failed = "payment_failed"
     welcome = "welcome"
@@ -53,6 +54,10 @@ TEMPLATES = {
     NotificationType.order_delivered: {
         "subject": "Order Delivered",
         "body": "Order #{order_id} has been delivered. Enjoy!"
+    },
+    NotificationType.order_disputed: {
+        "subject": "Dispute Opened - Order #{order_id}",
+        "body": "A dispute has been opened for order #{order_id}. Our team will review it and follow up shortly."
     },
     NotificationType.payment_succeeded: {
         "subject": "Payment Successful",
